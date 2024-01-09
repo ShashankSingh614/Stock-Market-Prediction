@@ -1,0 +1,110 @@
+:root{
+    --neon: hsl(200,100%,50%);
+
+    --bg: hsl(240,10%,1%);
+}
+*, *:before, *:after{
+    margin:0;
+    box-sizing: border-box;
+}
+
+video{
+    width: 100%;
+    height : 99.7vh;
+    object-fit: cover;
+
+}
+/* .container{
+    position: absolute;
+    top: 20vh;
+    left: 35%;
+    font-size: 2rem;
+    /* text-shadow: 3px 3px 7px rgb(204, 255, 0); 
+
+} */
+.container{
+    display: flex;
+    flex-direction: column;
+    font-size: 3em;
+     top: 15vh;
+     position: absolute;
+     left: 25%;
+    width: 55%;
+    align-items: center;
+    justify-content: center;
+}
+.neonText {
+    color: #fff;
+   /* text-shadow:
+    /* 0 0 7px #fff, 
+    0 0 10px #fff,
+    /* 0 0 21px #fff, 
+    0 0 42px rgb(0, 115, 255), 
+    0 0 82px rgb(0, 115, 255),
+    0 0 92px rgb(0, 115, 255),
+    0 0 102px rgb(0, 115, 255),
+    0 0 151px rgb(0, 115, 255);*/
+    text-shadow: 
+                
+                3px 3px 7px rgb(0, 115, 255),
+                3px 3px 21px rgb(0, 115, 255),  
+                3px 3px 42px rgb(0, 115, 255),  
+                3px 3px 82px rgb(0, 115, 255),  
+                3px 3px 92px rgb(0, 115, 255);
+}
+
+.container>h4{
+    margin-top: 15vh;
+    text-shadow: none;
+    text-shadow: 3px 3px 7px #fff;
+}
+.links{
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn a{
+    text-decoration: none;
+    
+   
+}
+.btn{
+    width: 200px;
+    height: 70px;
+    margin: 30px;
+    font-weight: 700;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+    padding: 10PX;
+    border: 3px solid #fff;
+    cursor: pointer;
+    background: transparent;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.2s;
+    box-shadow:0 1px 20px 0 #fff inset;
+
+}
+.btn:hover{
+   box-shadow:0 5px 70px 0 #fff  ,0 1px 20px 0 #fff inset;
+   border: 5px solid #fff;
+    transform: scale(1.1);
+}
+
+
+@media screen and (max-width:850px) {
+    .container{
+        font-size: 1.5rem;
+    }
+    .neonText{
+        left: 20%;
+    }
+    .links{
+        flex-direction: column;
+    }
+    .btn{
+        margin: 5px;
+    }
+}
