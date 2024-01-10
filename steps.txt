@@ -1,0 +1,27 @@
+1. user will select company from nav bar : *react js*
+2. it will go to *main.py* file and will correspond to code of company
+	
+	*company*	:   *code*
+	1. Apple        :   AAPL
+	2. Microsoft    :   MSFT
+	3. Google       :   GOOG
+	4. Amazon       :   AMZN
+	5. NVIDIA       :   NVDA
+
+*flask* : "num = int(input("Select a Company (1-5): "))" here num will equal to option made by the user respctively to the compnay. eg if user select apple. then num = 1
+
+3. it will go in while loop under if else loop respectively
+4. everting will run on its own
+5. use of *flask* :
+	a) display data in "E:\Shashank Singh\stock\venv\python\data" folder on webiste in tabular format.
+ eg : if user select apple
+then data in AAPL_historical_data.csv will diaply
+
+	b) display data in "E:\Shashank Singh\stock\venv\python\news" folder on webste in news section
+eg : if user select apple
+then data in aapl.txt will diaply
+
+*NOTE*
+both a abd b will update afterevery 30 sec. so flask should handle that.
+also if user select another company innav bar then data will be updated accoring to that
+ 
