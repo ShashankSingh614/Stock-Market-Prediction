@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Microsoft from '../Components/Microsoft/Microsoft'
+import NavbarMicrosoft from '../Components/Navbar/NavbarMicrosoft'
 
 function MicrosoftPage() {
     return (
         <>
-        <Navbar/>
+        <NavbarMicrosoft/>
         <Microsoft/>
         </>
     )

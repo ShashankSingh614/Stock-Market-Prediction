@@ -9,7 +9,7 @@ function Home() {
 
         <>
         <div className='homecontainer'>
-           <video src='hero.mp4' autoPlay loop muted/>
+           <video src='heroo.mp4' autoPlay loop muted/>
             <div className='container'>
              <motion.h1 
                     className="neonText"  
@@ -24,7 +24,7 @@ function Home() {
              initial={{x:"-10rem",opacity:0}}
              animate={{x:0,opacity:1}}
              transition={{duration:3,type:'spring'}}
-             >Choose a Company 😏😎
+             >Select a Company 
              </motion.h4>
 
              <div className='links'>

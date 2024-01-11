@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Apple from '../Components/Apple/Apple'
+import NavbarApple from '../Components/Navbar/NavbarApple'
 
 function ApplePage() {
     return (
         <>
-        <Navbar/>
+        <NavbarApple/>
         <Apple/>
 
         </>
