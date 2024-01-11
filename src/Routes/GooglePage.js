@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Google from '../Components/Google/Google'
+import NavbarGoogle from '../Components/Navbar/NavbarGoogle'
 
 function GooglePage() {
     return (
         <>
-        <Navbar/>
+        <NavbarGoogle/>
         <Google/>
         </>
     )

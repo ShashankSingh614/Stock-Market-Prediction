@@ -1,12 +1,32 @@
 import React from 'react'
 import './Apple.css';
+
+
 function Apple() {
     return (
-        <>
-        <h1>apple</h1>
-        </>
-        
+    <>
+        <div>
+            
+            <div className='second'>
+                <h3>Stock Graph</h3>
+            </div> 
+
+            <div className='wrapper'>
+               <div className='third'>
+                <h3>Company Data</h3>
+            </div> 
+
+            <div className='fourth'>
+                <h3>News</h3>
+            </div> 
+            </div>
+            
+        </div>
+
+
+    </>
     )
 }
 
-export default Apple
+
+export default Apple;

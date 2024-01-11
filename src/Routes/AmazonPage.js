@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Amazon from '../Components/Amazon/Amazon'
+import NavbarAmazon from '../Components/Navbar/NavbarAmazon'
 
 function AmazonPage() {
     return (
         <>
-        <Navbar/>
+        <NavbarAmazon/>
        <Amazon/>
         </>
     )

@@ -1,11 +1,11 @@
 import React from 'react'
-import Navbar from '../Components/Navbar/Navbar'
 import Nvidia from '../Components/Nvidia/Nvidia'
+import NavbarNvidia from '../Components/Navbar/NavbarNvidia'
 
 function NvidiaPage() {
     return (
         <>
-        <Navbar/>
+        <NavbarNvidia/>
         <Nvidia/>
         </>
     )
