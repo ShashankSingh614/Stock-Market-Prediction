@@ -15,7 +15,7 @@ requests==2.26.0               # HTTP requests
 yfinance==0.1.64               # Yahoo Finance API for stock data
 
 # Deep learning
-tensorflow==2.6.0              # Deep learning library
+tensorflow==2.11.1              # Deep learning library
 keras==2.6.0                   # High-level neural networks API
 
 # Data visualization
