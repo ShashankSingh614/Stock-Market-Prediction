@@ -1,0 +1,29 @@
+# requirements.txt
+
+# System and Mathematical Operations
+os==1.11                       # Operating system functionality
+math==1.3.3                    # Mathematical operations
+numpy==1.21.2                  # Numerical operations
+
+# Date and Time
+datetime==4.3                  # Date and time functionality
+
+# Stock data scraping and processing
+beautifulsoup4==4.10.0         # For HTML parsing
+pandas==1.3.3                  # Data manipulation and analysis
+requests==2.26.0               # HTTP requests
+yfinance==0.1.64               # Yahoo Finance API for stock data
+
+# Deep learning
+tensorflow==2.6.0              # Deep learning library
+keras==2.6.0                   # High-level neural networks API
+
+# Data visualization
+matplotlib==3.4.3              # Plotting and visualization
+seaborn==0.11.2                # Statistical data visualization
+
+# Web scraping
+html5lib==1.1                  # HTML parsing library
+
+# Additional dependencies
+alphavantage==0.3.4            # Alpha Vantage API for stock data
