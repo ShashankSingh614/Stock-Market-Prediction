@@ -26,7 +26,7 @@ register_matplotlib_converters()
 def feature_of_company(company_name):
     FEATURES = ['Low', 'High', 'Open', 'Close', 'Volume']
 
-    fig, axes = plt.subplots(nrows=len(FEATURES), ncols=1, figsize=(16, 8 * len(FEATURES)))
+    fig, axes = plt.subplots(nrows=len(FEATURES), ncols=1, figsize=(16, 8 * len(FEATURES)), facecolor='#17103A')
 
     for i, feature in enumerate(FEATURES):
         print("=" * 90)
@@ -63,10 +63,27 @@ def feature_of_company(company_name):
         print(f"MAE for {feature}: {MAE:.2f}")
         print(f"MAPE for {feature}: {MAPE:.2f}%")
 
-        axes[i].plot(date, y_test, label='Actual', color='#090364')
-        axes[i].plot(date,y_pred, label='Predicted', color='#1960EF')
+        text_color = 'white'
+        axes[i].title.set_color(text_color)
+        axes[i].xaxis.label.set_color(text_color)
+        axes[i].yaxis.label.set_color(text_color)
+        axes[i].set_facecolor('#17103A')
+
+        # Set tick and tick label color
+        axes[i].tick_params(axis='x', colors=text_color)
+        axes[i].tick_params(axis='y', colors=text_color)
+        for tick in axes[i].get_xticklabels():
+            tick.set_color(text_color)
+        for tick in axes[i].get_yticklabels():
+            tick.set_color(text_color)
+            
+        axes[i].plot(date, y_test, label='Actual', color='#C7047A')
+        axes[i].plot(date,y_pred, label='Predicted', color='#ff8c00')
         axes[i].set_title(f"{feature}")
-        axes[i].legend()
+        legend = axes[i].legend()
+        legend.get_frame().set_facecolor('#17103A')  # Change to your desired color
+        legend.get_texts()[0].set_color('white')  # Set text color to white for the 'Actual' label
+        legend.get_texts()[1].set_color('white')  # Set text color to white for the 'Predicted' label
         axes[i].set_xlabel('Date')
 
         model_save_path_with_params = f"models/NASDAQ_rnn_model_{feature}.h5"
@@ -75,35 +92,34 @@ def feature_of_company(company_name):
         plus = '+'
         minus = '-'
         print(f'The predicted close price is {predicted_price} ({plus if change_percent > 0 else minus}{change_percent}%)')
-        text_color = 'green' if change_percent > 0 else 'red'
+        text_color = 'white' if change_percent > 0 else 'white'
         # Add the predicted price and up/down text to the graph
         axes[i].text(0.95, 0.40, f'Predicted Price: {predicted_price}', 
                     transform=axes[i].transAxes, verticalalignment='top', 
                     horizontalalignment='right', color=text_color, 
-                    bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+                    bbox=dict(boxstyle='round', facecolor='#17103A', alpha=0.7))
 
         # Add up/down text to the graph
         up_down_text = 'Up' if change_percent > 0 else 'Down'
         axes[i].text(0.95, 0.35, f'Direction: {up_down_text}', 
                     transform=axes[i].transAxes, verticalalignment='top', 
                     horizontalalignment='right', color=text_color, 
-                    bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+                    bbox=dict(boxstyle='round', facecolor='#17103A', alpha=0.7))
 
         # Add accuracy text to the graph
         axes[i].text(0.95, 0.30, f'MAE: {MAE:.2f}', transform=axes[i].transAxes, 
              verticalalignment='top', horizontalalignment='right', 
-             color=text_color, bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+             color=text_color, bbox=dict(boxstyle='round', facecolor='#17103A', alpha=0.7))
         
         axes[i].text(0.95, 0.25, f'MAPE: {MAPE:.2f}%', transform=axes[i].transAxes, 
                     verticalalignment='top', horizontalalignment='right', 
-                    color=text_color, bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+                    color=text_color, bbox=dict(boxstyle='round', facecolor='#17103A', alpha=0.7))
         
         axes[i].text(0.95, 0.20, f'MDAPE: {MDAPE:.2f}%', transform=axes[i].transAxes, 
                     verticalalignment='top', horizontalalignment='right', 
-                    color=text_color, bbox=dict(boxstyle='round', facecolor='white', alpha=0.7))
+                    color=text_color, bbox=dict(boxstyle='round', facecolor='#17103A', alpha=0.7))
         
     plt.tight_layout()
-    fig.suptitle(f"{company_name}")
     layout_engine = fig.get_layout_engine()
     if layout_engine is not None:
         layout_engine.set(w_pad=4 / 72, h_pad=4 / 72, hspace=0, wspace=0)
@@ -115,6 +131,7 @@ def feature_of_company(company_name):
     axes[2].set_ylabel('Amount ($)')
     axes[3].set_ylabel('Amount ($)')
     fig.savefig(f"{company_name}.png", bbox_inches='tight')
+    fig.patch.set_facecolor('#17103A')
     plt.show()
 
 companies = {
